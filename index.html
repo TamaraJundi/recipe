@@ -10,16 +10,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
+  color-scheme:light;
   --bg:#f7f4ef; --surface:#fffdfa; --ink:#262420; --muted:#8a8378; --line:#e6e0d6;
   --accent:#262420; --accent-ink:#fffdfa; --accent-soft:#eee9e1; --danger:#a8432f;
   --shadow:0 1px 2px rgba(40,30,10,.04),0 6px 18px rgba(40,30,10,.05);
   --font:"Raleway",system-ui,-apple-system,"Segoe UI",sans-serif;
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#181715; --surface:#211f1c; --ink:#eeeae3; --muted:#9c958a; --line:#34312c;
-    --accent:#eeeae3; --accent-ink:#181715; --accent-soft:#2b2824; --danger:#e08b77; --shadow:none;
-  }
 }
 *{box-sizing:border-box}
 html,body{margin:0}
@@ -370,7 +365,7 @@ function renderGrid() {
   grid.innerHTML = `<div class="list">${list.map(r => `
     <button class="card" data-action="open" data-name="${esc(r.name)}">
       <h3>${esc(r.name)}</h3>
-      <div class="meta">${r.ingredients.length} ingredient${r.ingredients.length === 1 ? '' : 's'} · ${r.steps.length} step${r.steps.length === 1 ? '' : 's'}</div>
+      <div class="meta">${r.ingredients.length} ingredient${r.ingredients.length === 1 ? '' : 's'}</div>
       <p class="peek">${esc(r.ingredients.map(i => i.name).join(', ') || '—')}</p>
     </button>`).join('')}</div>`;
 }
